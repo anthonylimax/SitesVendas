@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
+*{
+    scroll-behavior:smooth;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+    text-decoration: none;
+}
+nav img{
+    height: 3rem;
+}
+.boxInfo{
+    opacity: 0;
+    position: absolute;
+    z-index: -11;
+}
+.activated-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    height: 200px;
+    top: 80px;
+    animation: fade;
+    animation-duration: .4s;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    justify-content: space-evenly;
+}
+footer{
+    margin-top: 100px;
+    height: 100px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+footer span{
+    width: 50%;
+}
+.RoundPictures{
+    width: 100%;
+    position: relative;
+    min-height: 200px;
+    height: 40vw;
+    max-height: 600px;
+    overflow: hidden;
+}
+.RoundPictures img{
+    position: absolute;
+    width: 100%;
+}
+nav ol{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    align-items: center;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+nav ol li a{
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: .2s;
+    cursor: pointer;
+}
+nav ol li a:hover{
+    color: pink;
+    box-shadow: 0px 1px pink;
+}
+nav ol li a:active{
+    animation: keyPress;
+    animation-duration: .3s;
+}
+
+@keyframes keyPress {
+    0%{
+    opacity: 0;
+    }
+    100%{
+    opacity: 1;
+    }
+}
+@keyframes EntrarNaTela {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+[data-animation]{
+    transition: 1s;
+    left: -100%;
+}
+[data-animation='fade']{
+    opacity: 1;
+    animation: EntrarNaTela;
+    animation-duration: 1s;
+    left: 0;
+}
+
+@media (width < 1000px) {
+    nav ol{
+        display: none;
+    }
+    section .Products{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+@keyframes fade{
+    0%{
+        height: 0;
+        opacity: 0;
+    }
+    100%{
+        height: 200px;
+        opacity: 1;
+    }
+}
+section{
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section h2{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Signika Negative', sans-serif;
+}
+section#ForWomen h2{
+    color: rgb(255, 138, 158);
+}
+section#ForMan h2{
+    color: rgb(68, 68, 68);
+}
+.Products{
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+}
+.Products div{
+    max-width: 300px;
+    width: 70vw;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid transparent;
+}
+.Products div:hover{
+    border: 1px solid #f0f0f0;
+}
+.Products div span{
+    
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 20px;
+    color: rgb(102, 102, 102);
+}
+.Products div img{
+    width: 80%;
+}
